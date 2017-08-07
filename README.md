@@ -1,3 +1,5 @@
+
+
 # CronDynamoDB
 Cron dynamo db helps you set up schedulers for scale down/up your DynamoDB att specific time period to reduce cost.
 
@@ -8,6 +10,8 @@ Cron dynamo db helps you set up schedulers for scale down/up your DynamoDB att s
 
 ## Requierments
 Node
+
+Under Construction this tool don't work at the moment 
 
 ## Install and run
 1. git clone https://github.com/lars159/cronDynamoDB

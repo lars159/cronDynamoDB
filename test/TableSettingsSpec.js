@@ -11,8 +11,7 @@ describe("Test table settings", function() {
             console.log("done 1" );
             tableSettings.read("1", "tableName", function(data) {
                 console.log("done " + data)
-                expect(data.read).toBe(rand);
-                expect(true).toBe(false);
+                expect(data.read).toBe(rand); 
                 done();
 
             });

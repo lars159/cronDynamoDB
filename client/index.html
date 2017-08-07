@@ -1,0 +1,181 @@
+<html>
+
+<head>
+    <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+    <style>
+        a{
+            width: 115px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <div class="login">
+
+            <form>
+
+                Sign in email<br>
+                <input class="signInEmail"> password
+                <input type="password" class="signInPassword" />
+                
+                <a class="signIn">sign in</a>
+
+            </form>
+            <br>
+            <br>
+            <form>
+
+                Sign up email<br>
+                <input name="email" class="signUpEmail"> password
+                <input type="password" name=""  class="signUpPassword"/> reenter password
+                <input type="password" name="" />
+                
+                 <a class="signUp">sign up</a>
+
+
+
+            </form>
+
+
+        </div>
+        <div class="main">
+
+            <form>
+                When should dynamoDB be turn off<br>
+                <input type="radio" name="dayOff" value="0">monday<br>
+                <input type="radio" name="dayOff" value="1">tuseday
+                <input type="radio" name="dayOff" value="2">wensday
+                <input type="radio" name="dayOff" value="3">thursday
+                <input type="radio" name="dayOff" value="4">friday
+                <input type="radio" name="dayOff" value="5">saturday
+                <input type="radio" name="dayOff" value="6">sunday
+                hour
+                <input name="hOff">
+                 minute
+                <input name="mOff">
+                
+                           <br>   When should dynamoDB be turn on<br>
+                <input type="radio" name="dayOn" value="0">monday<br>
+                <input type="radio" name="dayOn" value="1">tuseday
+                <input type="radio" name="dayOn" value="2">wensday
+                <input type="radio" name="dayOn" value="3">thursday
+                <input type="radio" name="dayOn" value="4">friday
+                <input type="radio" name="dayOn" value="5">saturday
+                <input type="radio" name="dayOn" value="6">sunday
+                hour
+                <input name="hOn">
+                 minute
+                <input name="mOn">
+                <br><br><br><br>
+                <a class="sendCron">Send</a>
+                <br>
+                <br>
+                <br>
+                <br>
+            </form>
+
+            Add dynamoDB key and secret so that we can turn of dynamodb
+            <form>
+                Key
+                <input name="key" class="aKey"> secret
+                <input name="secret" class="sKey">
+
+                <a class="sendAws">Submit</a>
+            </form>
+
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        var ip = ""
+        
+        
+        $(".main").hide();
+        $(".signUp").click(function() {
+            $.post(ip + "/signup", {
+                email: $(".signUpEmail").val(),
+                password: $(".signUpPassword").val()
+
+            }, ).done(function() {
+                $(".main").show();
+                $(".login").hide();
+            })
+
+        });
+
+        $(".signIn").click(function() {
+            $.post(ip + "/signin", {
+                email: $(".signInEmail").val(),
+                password: $(".signInPassword").val()
+
+            }).done(function() {
+                window.email = $(".signInEmail").val();
+                $(".main").show();
+                $(".login").hide();
+            })
+        })
+         
+        
+         
+         
+        
+        $(".sendCron").click(function() {
+            
+ 
+            $.post("/sendCron", { 
+                email :window.email,
+                onOff: false,
+                h : $( "input[name='hOff']" ).val(), 
+                m : $( "input[name='mOff']" ).val(),
+                day : $( "input[name='dayOff']" ).val(),
+                read: 1,
+                write: 1
+
+            }).done(function() {
+                alert("cron sent");
+            })
+            
+            
+            $.post("/sendCron", { 
+                email : window.email,
+                onOff: true,
+                h : $( "input[name='hOn']" ).val(), 
+                m : $( "input[name='mOn']" ).val(),
+                day : $( "input[name='dayOn']" ).val(),
+                read: 1,
+                write: 1
+
+            }).done(function() {
+                alert("cron sent");
+            })
+            
+        })
+        
+        $(".sendAws").click(function() {
+            $.post("/awsKey", {
+                email : window.email,
+                aKey: $(".aKey").val(),
+                sKey: $(".sKey").val()
+
+            }).done(function() {
+                alert("send AWS");
+            })
+        })
+        
+    </script>
+</body>
+
+</html>

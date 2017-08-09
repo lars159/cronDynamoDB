@@ -104,23 +104,57 @@
                 <input name="mOff" class="form-control">
                 
                            <br>   When should dynamoDB be turn on<br>
-                <input type="radio" name="dayOn" value="0">monday<br>
-                <input type="radio" name="dayOn" value="1">tuseday
-                <input type="radio" name="dayOn" value="2">wensday
-                <input type="radio" name="dayOn" value="3">thursday
-                <input type="radio" name="dayOn" value="4">friday
-                <input type="radio" name="dayOn" value="5">saturday
-                <input type="radio" name="dayOn" value="6">sunday
-                hour
-                <input name="hOn">
-                 minute
-                <input name="mOn">
-                <br><br><br><br>
-                <a class="sendCron">Send</a>
-                <br>
-                <br>
-                <br>
-                <br>
+                
+                 <div class="radio">
+                    <label>
+                    <input type="radio" name="dayOn" value="0">
+                        Monday
+                     </label>
+                </div>
+                <div class="radio">
+                    <label>
+                <input type="radio" name="dayOn" value="1">
+                        Tuseday
+                             </label>
+                </div>
+                <div class="radio">
+                    <label>
+                <input type="radio" name="dayOn" value="2">
+                        Wensday
+                                   </label>
+                </div>
+                 <div class="radio">
+                    <label>
+                <input type="radio" name="dayOn" value="3">Thursday
+                                         </label>
+                </div>
+                <div class="radio">
+                    <label>
+                <input type="radio" name="dayOn" value="4">Friday
+                                                 </label>
+                </div>
+                <div class="radio">
+                    <label>
+                <input type="radio" name="dayOn" value="5">Saturday
+                                                       </label>
+                </div>
+                <div class="radio">
+                    <label>
+                <input type="radio" name="dayOn" value="6">Sunday
+                                                           </label>
+                </div>
+                <label>
+                    Hour
+                </label>
+                <input name="hOff" class="form-control">
+                <label>
+                 Minute
+                </label>
+                <input name="mOff" class="form-control">
+                
+                
+                <a class="sendCron btn btn-primary">Send</a>
+            
             </form>
 
             Add dynamoDB key and secret so that we can turn of dynamodb

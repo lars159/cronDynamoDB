@@ -1,7 +1,7 @@
 
 
 # CronDynamoDB
-Cron dynamo db helps you set up schedulers for scale down/up your DynamoDB att specific time period to reduce cost.
+Cron DynamoDb helps you set up schedulers for scale down/up your DynamoDB att specific time period to reduce cost.
 
 
 ## Screenshot

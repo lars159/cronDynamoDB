@@ -5,16 +5,17 @@ Cron DynamoDb helps you set up schedulers for scale up/down your DynamoDB att sp
 
 
 ## Screenshot
-![alt text](https://raw.githubusercontent.com/lars159/cronDynamoDB/master/screen.png)
+![alt text](https://raw.githubusercontent.com/lars159/cronDynamoDB/master/screen2.png)
 
 
 ## Requierments
 Node
 
-Under Construction this tool don't work at the moment 
+
 
 ## Install and run
 1. git clone https://github.com/lars159/cronDynamoDB
 2. npm install
-3. node server.js
-4. Visit http://localhost:4000 
+3. Add your aws keys to js files
+4. node server.js
+5. Visit http://localhost:4000 
